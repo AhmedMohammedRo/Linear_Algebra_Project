@@ -1,6 +1,6 @@
 # 📊 Linear Regression from Scratch
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -54,8 +54,8 @@ The goal is to bridge **mathematical theory** with **practical machine learning 
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/linear-regression-project.git
-cd linear-regression-project
+git clone https://github.com/AhmedMohammedRo/Linear_Algebra_Project/
+cd Linear_Algebra_Project
 ```
 
 ### 2. Install dependencies
