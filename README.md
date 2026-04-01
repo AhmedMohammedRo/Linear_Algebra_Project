@@ -1,8 +1,9 @@
 # 📊 Linear Regression from Scratch
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+![ML](https://img.shields.io/badge/Field-Machine%20Learning-blue)
+![Linear Algebra](https://img.shields.io/badge/Math-Linear%20Algebra-orange)
+![Data Science](https://img.shields.io/badge/Domain-Data%20Science-teal)
 
 ---
 
