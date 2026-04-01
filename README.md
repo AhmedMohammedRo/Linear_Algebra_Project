@@ -129,7 +129,7 @@ python src/gradient.py
 - Khalid
 - Carlos emad
 - Ahmad Fouad
-- Yousef Haby
+- Yousef Hany
 - Mohammad Elsayed
 
 ---
