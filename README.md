@@ -42,28 +42,11 @@ The goal is to bridge **mathematical theory** with **practical machine learning 
 
 ## 🛠️ Tech Stack
 
-- Python 🐍  
+- Python  
 - NumPy  
 - Pandas  
-- Matplotlib (for visualization)  
-- (Optional) scikit-learn for validation  
-
----
-
-## 📂 Project Structure
-
-```
-├── data/                 # Datasets
-├── src/
-│   ├── normal_eq.py      # Normal Equation implementation
-│   ├── gradient.py       # Gradient Descent implementation
-│   ├── ridge.py          # Ridge Regression
-│   └── utils.py          # Helper functions
-├── notebooks/            # Experiments & visualization
-├── results/              # Graphs and outputs
-├── README.md
-└── requirements.txt
-```
+- Jupyter Notebook (for visualization)  
+- scikit-learn 
 
 ---
 
@@ -147,17 +130,6 @@ python src/gradient.py
 - Ahmad Fouad
 - Yousef Haby
 - Mohammad Elsayed
-
----
-
-## 🎤 Presentation Notes
-
-Each member explains a different component:
-
-- Math intuition  
-- Implementation  
-- Results  
-- Comparison  
 
 ---
 
