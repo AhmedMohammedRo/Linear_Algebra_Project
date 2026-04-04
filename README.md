@@ -62,14 +62,6 @@ cd Linear_Algebra_Project
 ### 2. Install dependencies
 ```bash
 pip install -r requirements.txt
-```
-
-### 3. Run the code
-```bash
-python src/normal_eq.py
-python src/gradient.py
-```
-
 ---
 
 ## 📐 Mathematical Background
