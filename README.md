@@ -62,6 +62,8 @@ cd Linear_Algebra_Project
 ### 2. Install dependencies
 ```bash
 pip install -r requirements.txt
+```
+
 ---
 
 ## 📐 Mathematical Background
