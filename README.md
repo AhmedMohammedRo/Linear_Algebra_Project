@@ -120,7 +120,7 @@ pip install -r requirements.txt
 - Omar Shaker 
 - Ahmad Roshdy
 - Mark Tamer
-- Khalid
+- Khalid Osam
 - Carlos emad
 - Ahmad Fouad
 - Yousef Hany
