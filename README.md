@@ -64,12 +64,6 @@ cd Linear_Algebra_Project
 pip install -r requirements.txt
 ```
 
-### 3. Run the code
-```bash
-python src/normal_eq.py
-python src/gradient.py
-```
-
 ---
 
 ## 📐 Mathematical Background
@@ -126,7 +120,7 @@ python src/gradient.py
 - Omar Shaker 
 - Ahmad Roshdy
 - Mark Tamer
-- Khalid
+- Khalid Osam
 - Carlos emad
 - Ahmad Fouad
 - Yousef Hany
