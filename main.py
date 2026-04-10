@@ -33,8 +33,8 @@ def main():
 
     # 5. Simple Prediction Test
     test_pred = model_ols.predict(X[0:1])
-    print(f"\nExample Prediction: {test_pred[0]:.4f}")
-    print(f"Actual Value: {y[0]:.4f}")
+    print(f"\nExample Prediction (First Car): {test_pred[0]:.2f} g/km CO2")
+    print(f"Actual CO2 Emission: {y[0]:.2f} g/km")
 
 if __name__ == "__main__":
     main()
