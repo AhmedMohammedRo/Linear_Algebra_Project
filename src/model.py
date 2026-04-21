@@ -28,32 +28,35 @@ class LinearRegressionManual:
 
 class GradientDescentRegression:
     """
-    Task 2: Linear Regression via Gradient Descent.
-    Iteratively minimizes the Mean Squared Error cost function:
-        J(w) = (1/2m) * ||Xw - y||^2
+    Task 2 & 3: Linear Regression via Gradient Descent with optional Ridge regularization.
+    Cost function:
+        J(w) = (1/2m) * ||Xw - y||^2 + (lambda_/2m) * ||w[1:]||^2
     Update rule:
-        w := w - alpha * (1/m) * X^T (Xw - y)
+        w := w - alpha * (1/m) * [X^T(Xw - y) + lambda_ * w]  (bias excluded)
     """
-    def __init__(self, learning_rate=0.01, n_iterations=1000):
+    def __init__(self, learning_rate=0.01, n_iterations=1000, lambda_=0):  # ← ADD lambda_=0
         self.lr           = learning_rate
         self.n_iterations = n_iterations
+        self.lambda_      = lambda_                                          # ← ADD this
         self.weights      = None
-        self.cost_history = []   # Track convergence
+        self.cost_history = []
 
     def fit(self, X, y):
-        m = X.shape[0]                       # number of samples
-        self.weights = np.zeros(X.shape[1])  # initialize weights to zero
+        m = X.shape[0]
+        self.weights = np.zeros(X.shape[1])
 
         for _ in range(self.n_iterations):
             predictions = X.dot(self.weights)
             errors      = predictions - y
 
-            # Gradient of MSE: (1/m) * X^T * errors
-            gradient     = (1 / m) * X.T.dot(errors)
+            gradient = (1 / m) * X.T.dot(errors)
+            gradient[1:] += (self.lambda_ / m) * self.weights[1:]          # ← ADD this line
+
             self.weights = self.weights - self.lr * gradient
 
-            # Track cost for convergence plot
-            cost = (1 / (2 * m)) * np.sum(errors ** 2)
+            # Track cost (including Ridge penalty)
+            cost = (1 / (2 * m)) * np.sum(errors ** 2) \
+                 + (self.lambda_ / (2 * m)) * np.sum(self.weights[1:] ** 2) # ← UPDATE this
             self.cost_history.append(cost)
 
     def predict(self, X):

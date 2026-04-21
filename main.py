@@ -52,8 +52,11 @@ def main():
     print(f"  Weights (λ={LAMBDA}): {model_ridge.weights}")
 
     # ── 7. Task 3 — Compare with Ridge GD ──────────────────────────
+    model_gd_ridge = GradientDescentRegression(learning_rate=0.1, n_iterations=1000, lambda_=LAMBDA)
+    model_gd_ridge.fit(X_train, y_train)
+
     run_comparison(X_train, X_test, y_train, y_test,
-                   model_ridge, model_gd, alpha=LAMBDA)
+                   model_ridge, model_gd_ridge, alpha=LAMBDA)
 
     # ── 8. Task 4 — Example Prediction ────────────────────────────
     pred = model_ols.predict(X_test[:3])
