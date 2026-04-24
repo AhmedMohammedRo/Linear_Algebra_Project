@@ -18,7 +18,7 @@ Rather than using black-box ML libraries, every algorithm is derived and impleme
 
 **Dataset:** Canadian Vehicle CO₂ Emissions (~7,385 vehicles)  
 **Goal:** Predict CO₂ emissions (g/km) from engine characteristics  
-**Result:** R² = 0.72, predictions within ~30 g/km of actual values
+**Result:** R² = 0.7345, predictions within ~30 g/km of actual values
 
 ---
 
@@ -62,20 +62,20 @@ The identity matrix **I** is modified so the bias term is never penalized (I₀�
 
 | Method | MSE | R² Score | Notes |
 |--------|-----|----------|-------|
-| **Normal Equation** (ours) | ~893 | **0.7201** | One-shot exact solution |
-| **Gradient Descent** (ours) | ~893 | **0.7201** | Converges in ~100 iterations |
-| **Ridge Regression** (λ=10) | ~894 | **0.7201** | Slightly shrunk weights |
-| scikit-learn (reference) | ~893 | **0.7201** | Industry standard |
+| **Normal Equation** (ours) | ~913 | **0.7345** | One-shot exact solution |
+| **Gradient Descent** (ours) | ~913 | **0.7345** | Converges in ~100 iterations |
+| **Ridge Regression** (λ=10) | ~913 | **0.7345** | Slightly shrunk weights |
+| scikit-learn (reference) | ~913 | **0.7345** | Industry standard |
 
-**Weight difference vs scikit-learn: `2.84e-12`** — essentially zero, confirming mathematical accuracy.
+**Weight difference vs scikit-learn: `3.16e-13`** — essentially zero, confirming mathematical accuracy.
 
 ### Sample Predictions
 
 | Predicted (g/km) | Actual (g/km) | Error |
 |-----------------|---------------|-------|
-| 248.3 | 246.0 | 2.3 |
-| 271.4 | 269.0 | 2.4 |
-| 253.1 | 255.0 | 1.9 |
+| 250.8 | 253.0 | 2.2 |
+| 304.5 | 344.0 | 39.5 |
+| 347.7 | 322.0 | 25.7 |
 
 ### Gradient Descent Convergence
 
@@ -203,7 +203,7 @@ Without `StandardScaler`, Gradient Descent either diverges or needs thousands mo
 **3. Regularization is a linear algebra operation**  
 Ridge regression adds `λI` to `XᵀX` before inversion — this tiny change guarantees the matrix is invertible even when features are correlated, and shrinks weights to prevent overfitting.
 
-**4. Our implementation matches sklearn to 12 decimal places**  
+**4. Our implementation matches sklearn to 13 decimal places**  
 This validates that the mathematics was implemented correctly with no shortcuts.
 
 ---
