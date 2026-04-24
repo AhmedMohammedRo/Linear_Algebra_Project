@@ -44,21 +44,27 @@ def main():
     run_comparison(X_train, X_test, y_train, y_test,
                    model_ols, model_gd, alpha=0)
 
-    # ── 6. Task 3 — Ridge Regression ───────────────────────────────
+    # ── 6. Task 3 — Ridge Regression (multiple lambda values) ──────
     print("\n[Task 3] Ridge Regression  w = (X^T X + λI)^{-1} X^T y")
-    LAMBDA = 10.0
-    model_ridge = LinearRegressionManual(alpha=LAMBDA)
-    model_ridge.fit(X_train, y_train)
-    print(f"  Weights (λ={LAMBDA}): {model_ridge.weights}")
 
-    # ── 7. Task 3 — Compare with Ridge GD ──────────────────────────
-    model_gd_ridge = GradientDescentRegression(learning_rate=0.1, n_iterations=1000, lambda_=LAMBDA)
-    model_gd_ridge.fit(X_train, y_train)
+    for lam in [0, 0.1, 1, 10, 100]:
+        print(f"\n  --- λ = {lam} ---")
 
-    run_comparison(X_train, X_test, y_train, y_test,
-                   model_ridge, model_gd_ridge, alpha=LAMBDA)
+        # Normal Equation with Ridge
+        model_ridge = LinearRegressionManual(alpha=lam)
+        model_ridge.fit(X_train, y_train)
+        print(f"  Weights (λ={lam}): {model_ridge.weights}")
 
-    # ── 8. Task 4 — Example Prediction ────────────────────────────
+        # Gradient Descent with Ridge
+        model_gd_ridge = GradientDescentRegression(
+            learning_rate=0.1, n_iterations=1000, lambda_=lam
+        )
+        model_gd_ridge.fit(X_train, y_train)
+
+        run_comparison(X_train, X_test, y_train, y_test,
+                       model_ridge, model_gd_ridge, alpha=lam)
+
+    # ── 7. Task 4 — Sample Predictions ────────────────────────────
     pred = model_ols.predict(X_test[:3])
     print("\n[Task 4] Sample Predictions vs Actuals")
     for p, a in zip(pred, y_test[:3]):
